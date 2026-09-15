@@ -14,4 +14,5 @@ public interface RescueCaseRepository extends JpaRepository<RescueCase, Long> {
     List<RescueCase> findByStatusOrderByRescueDateAsc(RescueStatus status);
 
     List<RescueCase> findByRescueCenter_Code(String code);
+    List<RescueCase> findByStatus(RescueStatus status);
 }

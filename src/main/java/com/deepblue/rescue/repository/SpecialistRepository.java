@@ -6,7 +6,7 @@ import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.query.Param;
 
 import java.util.List;
-
+import java.util.Optional;
 public interface SpecialistRepository extends JpaRepository<Specialist, Long> {
 
     @Query("""
@@ -20,4 +20,5 @@ public interface SpecialistRepository extends JpaRepository<Specialist, Long> {
     List<Specialist> findActiveByExpertiseNameIgnoreCase(
             @Param("expertiseName") String expertiseName
     );
+    Optional<Specialist> findByProfessionalCode(String professionalCode);
 }
